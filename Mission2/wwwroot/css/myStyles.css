@@ -1,0 +1,12 @@
+﻿h1{
+    color: midnightblue !important;
+    font-family: Arial;
+}
+h3 {
+    color: midnightblue !important;
+    display: inline !important;
+}
+p{
+    width: 500px !important;
+    display: block !important;
+}

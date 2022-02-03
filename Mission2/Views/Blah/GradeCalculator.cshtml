@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Grade Calculator";
+}
+
+<!-- Grade Calculator -->
+ @model GradeCalculatorModel;
+
+<div class="ml-3 mb-5 mt-2">
+    <div id="gradeCalculator" class="form-group">
+        <h2>Grade Calculator</h2>
+        <h7>Input the score for each of the following categories</h7>
+        <form method="post">
+            <label>Assignments Score</label>
+            <input id="assignmentsScore" placeholder="0" asp-for="AssignmentsScore" /><br />
+            <label>Group Project Score</label>
+            <input id="groupProjectScore" placeholder="0" asp-for="GroupProjectScore" /><br />
+            <label>Quizzes Score</label>
+            <input id="quizzesScore" placeholder="0" asp-for="QuizzesScore" /><br />
+            <label>Exams Score</label>
+            <input id="examsScore" placeholder="0" asp-for="ExamsScore" /><br />
+            <label>Intex Score</label>
+            <input id="intexScore" placeholder="0" asp-for="IntexScore" /><br />
+            <input id="calculate" type="button" class="btn-success" value="Calculate Grade" />
+            <input id="reset" type="button" class="btn-danger" value="Reset" />
+            <div asp-validation-summary="All"></div>
+
+        </form>
+    </div>
+
+    <!-- letter output -->
+    <div>
+        <h3>Letter Grade: </h3><h3 id="LetterGrade"></h3>
+
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/myFunctions.js"></script>
+
