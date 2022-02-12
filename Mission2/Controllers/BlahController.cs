@@ -25,7 +25,7 @@ namespace Mission2.Controllers
         [HttpPost]
         public IActionResult GradeCalculator(GradeCalculatorModel model)
         {
-            return View();
+            return View();        
         }
     }
 }

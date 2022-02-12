@@ -12,7 +12,7 @@
     <div id="gradeCalculator" class="form-group">
         <h2>Grade Calculator</h2>
         <h7>Input the score for each of the following categories</h7>
-        <form method="post">
+        <form id="gCalc" method="post">
             <label>Assignments Score</label>
             <input id="assignmentsScore" placeholder="0" asp-for="AssignmentsScore" /><br />
             <label>Group Project Score</label>
@@ -23,7 +23,7 @@
             <input id="examsScore" placeholder="0" asp-for="ExamsScore" /><br />
             <label>Intex Score</label>
             <input id="intexScore" placeholder="0" asp-for="IntexScore" /><br />
-            <input id="calculate" type="button" class="btn-success" value="Calculate Grade" />
+            <input id="calculate" type="submit" class="btn-success" value="Calculate Grade" />
             <input id="reset" type="button" class="btn-danger" value="Reset" />
             <div asp-validation-summary="All"></div>
 
@@ -36,7 +36,5 @@
 
     </div>
 </div>
-
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script src="~/js/myFunctions.js"></script>
-

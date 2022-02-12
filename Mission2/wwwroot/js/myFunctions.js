@@ -22,47 +22,55 @@ $("#calculate").click(function () {
     iTotalScore = iAScore + iGScore + iQScore + iEScore + iIScore;
 
     // - Use an if statment to determine correct letter grade
+    if (iAScore / .55 <= 100 && iGScore / .05 <= 100 && iQScore / .1 <= 100 && iEScore / .2 <= 100 && iIScore / .1 <= 100) {
+        if (iTotalScore >= 94) {
+            sLetterGrade = "A";
+        }
+        else if (iTotalScore >= 90) {
+            sLetterGrade = "A-";
+        }
+        else if (iTotalScore >= 87) {
+            sLetterGrade = "B+";
+        }
+        else if (iTotalScore >= 84) {
+            sLetterGrade = "B";
+        }
+        else if (iTotalScore >= 80) {
+            sLetterGrade = "B-";
+        }
+        else if (iTotalScore >= 77) {
+            sLetterGrade = "C+";
+        }
+        else if (iTotalScore >= 74) {
+            sLetterGrade = "C";
+        }
+        else if (iTotalScore >= 70) {
+            sLetterGrade = "C-";
+        }
+        else if (iTotalScore >= 67) {
+            sLetterGrade = "D+";
+        }
+        else if (iTotalScore >= 64) {
+            sLetterGrade = "D";
+        }
+        else if (iTotalScore >= 60) {
+            sLetterGrade = "D-";
+        }
+        else {
+            sLetterGrade = "E";
+        };
+    }
+    
 
-    if (iTotalScore >= 94) {
-        sLetterGrade = "A";
+    if (sLetterGrade != '') {
+        sessionStorage.setItem("LetterGrade", sLetterGrade);
     }
-    else if (iTotalScore >= 90) {
-        sLetterGrade = "A-";
-    }
-    else if (iTotalScore >= 87) {
-        sLetterGrade = "B+";
-    }
-    else if (iTotalScore >= 84) {
-        sLetterGrade = "B";
-    }
-    else if (iTotalScore >= 80) {
-        sLetterGrade = "B-";
-    }
-    else if (iTotalScore >= 77) {
-        sLetterGrade = "C+";
-    }
-    else if (iTotalScore >= 74) {
-        sLetterGrade = "C";
-    }
-    else if (iTotalScore >= 70) {
-        sLetterGrade = "C-";
-    }
-    else if (iTotalScore >= 67) {
-        sLetterGrade = "D+";
-    }
-    else if (iTotalScore >= 64) {
-        sLetterGrade = "D";
-    }
-    else if (iTotalScore >= 60) {
-        sLetterGrade = "D-";
-    }
-    else {
-        sLetterGrade = "E";
-    };
-
-    $("#LetterGrade").html(sLetterGrade);
-
 })
+
+window.onload = function () {
+    $('#LetterGrade').html(sessionStorage.getItem('LetterGrade'));
+    sessionStorage.clear();
+}
 
 // Resets form values and letter grade on DOM
 
@@ -73,5 +81,4 @@ $('#reset').click(function () {
     $("#examsScore").val("");
     $("#intexScore").val("");
     $("#LetterGrade").html("");
-
 });
